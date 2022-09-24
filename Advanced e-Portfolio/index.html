@@ -8,6 +8,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="./styles.css">
     <script src="https://kit.fontawesome.com/8c40c3a30f.js" crossorigin="anonymous"></script>
+    <script src="/app.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("dSlgm8_3vYYWH9niU");
+        })();
+    </script>
 </head>
 
 <body>
@@ -41,7 +49,6 @@
                 <li class="nav__link click">
                     <a href="#" class="
                     nav__link--anchor
-                    link__hover-effect
                     link__hover-effect--black
                     "><i class="fa-solid fa-circle-half-stroke"></i></a>
                 </li>
@@ -71,10 +78,207 @@
                 </div>
             </div>
         </header>
-        <button class="mail__btn click">
+        <button class="mail__btn click" onclick="toggleModal()">
             <i class="fa-solid fa-envelope"></i>
         </button>
+        <a href="#projects" class="scroll">
+            <div class="scroll__icon click"></div>
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title">Here's a bit about me.</h3>
+                <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer</h4>
+                <p class="modal__para">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, illo quibusdam. Quis impedit rem
+                    fugiat corrupti excepturi blanditiis, asperiores cum. Aliquid, est magni quasi fuga enim officiis
+                    nobis modi numquam!
+                    <br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius tempore quaerat dignissimos temporibus
+                    provident sed non ipsum labore beatae nemo eum fugiat minus in dolore obcaecati, consequuntur,
+                    voluptatibus possimus cumque.
+                </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/html5-logo-31813.png" alt="">
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/html5-logo-31813.png" alt="">
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/html5-logo-31813.png" alt="">
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/html5-logo-31813.png" alt="">
+                        <span class="language__name">HTML</span>
+                    </figure>
+                </div>
+
+            </div>
+            <div class="modal__half modal__contact">
+                <h3 class="modal__title modal__title--contact">
+                    Let's have a chat!
+                </h3>
+                <h4 class="modal__sub-title modal__sub-title--contact">
+                    I'm currently open to new oppoertunites.
+                </h4>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input class="input" name="user_name" type="text"></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Email</label>
+                        <input class="input" name="user_email" type="email"></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea class="input" name="message" type="text"></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">
+                        Send it my way
+                    </button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! Looking forward to speaking to you soon.
+                </div>
+            </div>
+            <i class="fas fa-times modal__exit click"></i>
+        </div>
     </section>
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">
+                    Here are some of my <span class="orange">projects</span>
+                </h1>
+                <ul class="project__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/blinker mockup.png" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Car Sales Projects
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    Html, CSS, JavaScript, Vue, VueX
+                                </h4>
+                                <p class="project__description--para">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad nihil placeat
+                                    ratione maiores nostrum inventore distinctio, doloribus, officia eaque praesentium.
+                                    Repudiandae eligendi eum autem, dolorem consequuntur quasi minima ipsa?
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-brands fa-github click"></i>
+                                    </a>
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-solid fa-link click"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/blinker mockup.png" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Car Sales Projects
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    Html, CSS, JavaScript, Vue, VueX
+                                </h4>
+                                <p class="project__description--para">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad nihil placeat
+                                    ratione maiores nostrum inventore distinctio, doloribus, officia eaque praesentium.
+                                    Repudiandae eligendi eum autem, dolorem consequuntur quasi minima ipsa?
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-brands fa-github click"></i>
+                                    </a>
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-solid fa-link click"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/blinker mockup.png" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Car Sales Projects
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    Html, CSS, JavaScript, Vue, VueX
+                                </h4>
+                                <p class="project__description--para">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad nihil placeat
+                                    ratione maiores nostrum inventore distinctio, doloribus, officia eaque praesentium.
+                                    Repudiandae eligendi eum autem, dolorem consequuntur quasi minima ipsa?
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-brands fa-github click"></i>
+                                    </a>
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-solid fa-link click"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+                <figure>
+                    <img class="footer__img" src="./assets/logo.svg" alt="">
+                </figure>
+                <div class="footer__social--list">
+                    <a href="#" class="footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                        Github
+                    </a>
+                    <a href="#" class="footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                        LinkedIn
+                    </a>
+                    <a href="#" class="footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                        Contact
+                    </a>
+                    <a href="#" class="footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                        Resume
+                    </a>
+                </div>
+                <div class="footer__copyright">Copyright © David Bragg </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
