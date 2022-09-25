@@ -11,10 +11,10 @@ function contact(event) {
             event.target,
             "dSlgm8_3vYYWH9niU"
         ).then(() => {
-            loading.classList.remove("modal__overal--visible");
+            loading.classList.remove("modal__overlay--visible");
             success.classList += " modal__overlay--visible";
         }).catch(() => {
-            loading.classList.remove("modal__overal--visible");
+            loading.classList.remove("modal__overlay--visible");
             alert(
                 "The email service is temporarily unavailable. Please contact me at davidmuir1999@gmail.com"
             );
